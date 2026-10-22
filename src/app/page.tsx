@@ -99,8 +99,8 @@ export default function Home() {
 
   const handleVerify = () => {
     if (parseInt(captchaAnswer) === num1 + num2) {
-      window.open("YOUR_GOOGLE_DRIVE_LINK_HERE", "_blank");
-      setIsModalOpen(false);
+      // Changed from window.open("_blank") to window.location.href to bypass pop-up blockers
+      window.location.href = "https://drive.google.com/drive/folders/19hzr56sl5uWyzMdoh3gCOGyoQ3ypmw-6";
     } else {
       setCaptchaError(true);
     }
