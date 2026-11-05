@@ -82,6 +82,12 @@ const MarkerCertificate = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+const MarkerWhatsapp = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
+
 export default function Home() {
   // Modal & Verification State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -281,17 +287,19 @@ export default function Home() {
                 <span className="text-xs sm:text-sm font-medium tracking-wide">github.com/Okeyo-pixel</span>
               </a>
               
-              {/* ABSTRACT CORP. LOGO & COMING SOON HOVER */}
-              <div className="flex items-center gap-3 sm:gap-4 text-slate-200 transition-colors group cursor-default mt-2">
-                <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full overflow-hidden">
+              {/* ABSTRACT CORP. LOGO & CONTACT REDIRECT */}
+              <a href="https://wa.me/254721833147" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 sm:gap-4 text-slate-200 transition-colors group mt-2 max-w-sm">
+                <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full overflow-hidden shrink-0">
                   <div className="absolute inset-0 bg-[#3C6B1F]/30 opacity-70 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
                   <img src="/company-logo.png" alt="Abstract Corp Logo" className="relative w-full h-full object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <span className="text-xs sm:text-sm font-medium tracking-wide">
                   <span className="inline-block group-hover:hidden transition-all duration-300">ABSTRACT CORP.</span>
-                  <span className="hidden group-hover:inline-block text-emerald-400 italic font-bold tracking-widest drop-shadow-md transition-all duration-300">Coming soon...</span>
+                  <span className="hidden group-hover:inline-block text-[9px] sm:text-[11px] text-emerald-400 italic font-bold tracking-wider drop-shadow-md transition-all duration-300 leading-tight">
+                    Passionate about building the future? Connect on WhatsApp to learn how you can be a part of our growing vision.
+                  </span>
                 </span>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -330,7 +338,7 @@ export default function Home() {
             </div>
 
             <p className="text-slate-200 text-sm sm:text-lg font-light leading-relaxed text-left sm:text-justify tracking-wide">
-              &ldquo;Innovative Energy, Geospatial &amp; AI Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools alongside Apache AI orchestration and machine learning to drive sustainable, automated engineering solutions.&rdquo;
+              &ldquo;Innovative Energy, Geospatial &amp; AI Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools alongside Apache AI orchestration, RLHF model training, and machine learning to drive sustainable, automated engineering solutions.&rdquo;
             </p>
 
             <div className="inline-block rounded-xl sm:rounded-2xl bg-slate-900 text-white px-5 sm:px-6 py-2 shadow border border-[#3C6B1F]">
@@ -342,7 +350,7 @@ export default function Home() {
             <ul className="space-y-3 sm:space-y-4 text-slate-200 text-xs sm:text-base tracking-wide pl-5 text-left list-disc marker:text-emerald-400 font-light">
               <li>Analytical engineer with strong problem-solving skills in building energy simulation (DesignBuilder, EnergyPlus) and M&amp;V inspection protocols.</li>
               <li>Experienced in multi-family commercial energy efficiency projects, ASHRAE Level II audits, EPRA Investment Grade Audits (IGA), and GIS spatial modeling.</li>
-              <li>Adaptable, detail-oriented, and innovation-driven—certified in AI Orchestration, Machine Learning, and building automated Python data pipelines.</li>
+              <li>Adaptable, detail-oriented, and innovation-driven—certified in AI Orchestration, Machine Learning, and experienced in RLHF model evaluation.</li>
             </ul>
           </div>
 
@@ -695,7 +703,7 @@ export default function Home() {
                 { title: "Energy Simulation", desc: "Building energy modeling, HVAC systems analysis, and dynamic thermal simulation using DesignBuilder and EnergyPlus." },
                 { title: "Auditing & M&V", desc: "ASHRAE Level II Energy Audits, EPRA Investment Grade Audits (IGA), and Con Edison NY M&V inspection protocols." },
                 { title: "Geospatial & CAD", desc: "Cadastral, topographical, and sectional surveys; spatial analysis and cartography using ArcGIS and AutoCAD." },
-                { title: "Data, AI & Web3", desc: "Advanced Excel data workflows, Apache AI Orchestration, Machine Learning, LLM APIs, and Python-based automation scripts." },
+                { title: "AI, ML & Orchestration", desc: "Python programming for Machine Learning (Scikit-Learn). Apache Airflow orchestration, AI Agents, and RLHF evaluation." },
               ].map((card) => (
                 <div key={card.title} className="rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-[#3C6B1F]/50 bg-slate-900/80 backdrop-blur-sm">
                   <div className="bg-[#1b2f0e] text-white py-3 px-4 text-center rounded-t-3xl border-b border-[#3C6B1F]/40">
@@ -723,7 +731,7 @@ export default function Home() {
                   { label: "Audits & M&V", height: "h-[92%]" },
                   { label: "GIS & Survey", height: "h-[88%]" },
                   { label: "Energy Model", height: "h-[84%]" },
-                  { label: "AI & Data", height: "h-[85%]" },
+                  { label: "AI & ML", height: "h-[85%]" },
                 ].map((bar) => (
                   <div key={bar.label} className="col-span-2 sm:col-span-2 flex flex-col items-center justify-end h-full mx-auto w-full max-w-[60px] sm:max-w-[90px]">
                     <div className={`w-full ${bar.height} rounded-t-xl sm:rounded-t-2xl bg-[#3C6B1F] hover:bg-[#2d5217] transition-all shadow-md border border-emerald-400/30`} />
@@ -734,7 +742,7 @@ export default function Home() {
               <div className="grid grid-cols-12 gap-2 sm:gap-4 pt-3 text-center">
                 <div className="col-span-1" />
                 {[
-                  "Audits & M&V", "GIS & Survey", "Energy Model", "AI & Data",
+                  "Audits & M&V", "GIS & Survey", "Energy Model", "AI & ML",
                 ].map((label) => (
                   <div key={label} className="col-span-2 font-bold text-[9px] sm:text-xs uppercase tracking-wider text-slate-200">
                     {label}
@@ -769,7 +777,6 @@ export default function Home() {
               <p className="font-bold text-xs sm:text-sm uppercase tracking-wide">
                 KCSE — Ringa Boys&apos; High School (2018)
               </p>
-              <p className="text-[10px] sm:text-xs text-emerald-300 font-semibold tracking-widest uppercase">Grade: B+ (72 Points)</p>
             </div>
           </div>
 
@@ -814,6 +821,32 @@ export default function Home() {
                   <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Coursera Credential</span>
                 </a>
               </li>
+              <li>
+                <div className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group cursor-default">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Certified Energy Manager</strong>
+                  <span className="block mt-1">
+                    <span className="inline-block group-hover:hidden text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest transition-all duration-300">
+                      Professional Credential
+                    </span>
+                    <span className="hidden group-hover:inline-block text-[10px] sm:text-xs text-emerald-400 italic font-bold tracking-widest drop-shadow-md transition-all duration-300">
+                      Certificates available upon request
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group cursor-default">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">RLHF Specialist</strong>
+                  <span className="block mt-1">
+                    <span className="inline-block group-hover:hidden text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest transition-all duration-300">
+                      AI Model Training
+                    </span>
+                    <span className="hidden group-hover:inline-block text-[9px] sm:text-[10px] lg:text-[10.5px] text-emerald-400 italic font-bold tracking-widest drop-shadow-md transition-all duration-300 leading-tight">
+                      Evaluated & fine-tuned AI models via Outlier, Mecor, and Handshake AI
+                    </span>
+                  </span>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -823,11 +856,11 @@ export default function Home() {
               <MarkerMail size={24} className="-rotate-1 sm:w-7 sm:h-7" /> Contact
             </h3>
             <div className="p-5 sm:p-6 rounded-3xl bg-[#1b2f0e] border border-[#3C6B1F]/50 space-y-4 shadow-xl">
-              <a href="mailto:okeyootieno@outlook.com" className="block text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
-                okeyootieno@outlook.com
+              <a href="mailto:okeyootieno@outlook.com" className="flex items-center gap-2 text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
+                <MarkerMail size={16} /> okeyootieno@outlook.com
               </a>
-              <a href="mailto:motieno@kawikenya.com" className="block text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
-                motieno@kawikenya.com
+              <a href="https://wa.me/254721833147" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
+                <MarkerWhatsapp size={16} /> +254 721 833 147
               </a>
               <a href="https://github.com/Okeyo-pixel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
                 <MarkerGithub size={16} /> github.com/Okeyo-pixel
