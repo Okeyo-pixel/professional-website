@@ -69,6 +69,19 @@ const MarkerStar = ({ size = 24, className = "" }) => (
   </svg>
 );
 
+const MarkerGithub = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+  </svg>
+);
+
+const MarkerCertificate = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="8" r="6" />
+    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+  </svg>
+);
+
 export default function Home() {
   // Modal & Verification State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -99,7 +112,6 @@ export default function Home() {
 
   const handleVerify = () => {
     if (parseInt(captchaAnswer) === num1 + num2) {
-      // Changed from window.open("_blank") to window.location.href to bypass pop-up blockers
       window.location.href = "https://drive.google.com/drive/folders/19hzr56sl5uWyzMdoh3gCOGyoQ3ypmw-6";
     } else {
       setCaptchaError(true);
@@ -227,14 +239,14 @@ export default function Home() {
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             <div>
               <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-emerald-400 mb-2">
-                Junior Energy Engineer • Professional Portfolio
+                Engineering & AI Professional Portfolio
               </p>
               <h1 className="font-black text-4xl sm:text-7xl uppercase tracking-tighter leading-[0.95]">
                 <span className="text-emerald-300 block">Professional</span>
                 <span className="text-white block mt-1 sm:mt-2">Career Profile</span>
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-xl text-slate-200 font-light tracking-wide leading-relaxed max-w-lg mx-auto sm:mx-0">
-                Engineering Solutions for Modern Industry &amp; Building Efficiency
+                Engineering Solutions for Modern Industry, Building Efficiency &amp; Data Automation
               </p>
             </div>
 
@@ -245,7 +257,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="mt-2 sm:mt-3 text-xs sm:text-base font-bold uppercase tracking-widest text-emerald-300">
-                Junior Energy Engineer | Geospatial Engineer
+                Energy Engineer | Geospatial Engineer | Certified AI Engineer
               </p>
             </div>
 
@@ -261,6 +273,12 @@ export default function Home() {
                   <MarkerBriefcase size={18} className="-rotate-2" />
                 </span>
                 <span className="text-xs sm:text-sm font-medium tracking-wide">motieno@kawikenya.com</span>
+              </a>
+              <a href="https://github.com/Okeyo-pixel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors">
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-sm border border-slate-600">
+                  <MarkerGithub size={18} className="rotate-3" />
+                </span>
+                <span className="text-xs sm:text-sm font-medium tracking-wide">github.com/Okeyo-pixel</span>
               </a>
               
               {/* ABSTRACT CORP. LOGO & COMING SOON HOVER */}
@@ -312,19 +330,19 @@ export default function Home() {
             </div>
 
             <p className="text-slate-200 text-sm sm:text-lg font-light leading-relaxed text-left sm:text-justify tracking-wide">
-              &ldquo;Innovative Energy &amp; Geospatial Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools alongside AI and machine learning to drive sustainable, cost-effective engineering solutions.&rdquo;
+              &ldquo;Innovative Energy, Geospatial &amp; AI Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools alongside Apache AI orchestration and machine learning to drive sustainable, automated engineering solutions.&rdquo;
             </p>
 
             <div className="inline-block rounded-xl sm:rounded-2xl bg-slate-900 text-white px-5 sm:px-6 py-2 shadow border border-[#3C6B1F]">
               <span className="font-bold text-xs sm:text-lg tracking-widest uppercase text-emerald-300">
-                As Energy &amp; Geospatial Engineer
+                As Energy, Spatial &amp; AI Engineer
               </span>
             </div>
 
             <ul className="space-y-3 sm:space-y-4 text-slate-200 text-xs sm:text-base tracking-wide pl-5 text-left list-disc marker:text-emerald-400 font-light">
               <li>Analytical engineer with strong problem-solving skills in building energy simulation (DesignBuilder, EnergyPlus) and M&amp;V inspection protocols.</li>
-              <li>Experienced in multi-family and commercial energy efficiency projects, ASHRAE Level II audits, EPRA Investment Grade Audits (IGA), and GIS spatial modeling.</li>
-              <li>Adaptable, detail-oriented, and innovation-driven—actively exploring AI, Machine Learning, and Blockchain/Cryptography applications.</li>
+              <li>Experienced in multi-family commercial energy efficiency projects, ASHRAE Level II audits, EPRA Investment Grade Audits (IGA), and GIS spatial modeling.</li>
+              <li>Adaptable, detail-oriented, and innovation-driven—certified in AI Orchestration, Machine Learning, and building automated Python data pipelines.</li>
             </ul>
           </div>
 
@@ -677,7 +695,7 @@ export default function Home() {
                 { title: "Energy Simulation", desc: "Building energy modeling, HVAC systems analysis, and dynamic thermal simulation using DesignBuilder and EnergyPlus." },
                 { title: "Auditing & M&V", desc: "ASHRAE Level II Energy Audits, EPRA Investment Grade Audits (IGA), and Con Edison NY M&V inspection protocols." },
                 { title: "Geospatial & CAD", desc: "Cadastral, topographical, and sectional surveys; spatial analysis and cartography using ArcGIS and AutoCAD." },
-                { title: "Data, AI & Web3", desc: "Advanced Excel data visualization alongside research in Artificial Intelligence, Machine Learning, and Blockchain." },
+                { title: "Data, AI & Web3", desc: "Advanced Excel data workflows, Apache AI Orchestration, Machine Learning, LLM APIs, and Python-based automation scripts." },
               ].map((card) => (
                 <div key={card.title} className="rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-[#3C6B1F]/50 bg-slate-900/80 backdrop-blur-sm">
                   <div className="bg-[#1b2f0e] text-white py-3 px-4 text-center rounded-t-3xl border-b border-[#3C6B1F]/40">
@@ -705,7 +723,7 @@ export default function Home() {
                   { label: "Audits & M&V", height: "h-[92%]" },
                   { label: "GIS & Survey", height: "h-[88%]" },
                   { label: "Energy Model", height: "h-[84%]" },
-                  { label: "AI & Web3", height: "h-[78%]" },
+                  { label: "AI & Data", height: "h-[85%]" },
                 ].map((bar) => (
                   <div key={bar.label} className="col-span-2 sm:col-span-2 flex flex-col items-center justify-end h-full mx-auto w-full max-w-[60px] sm:max-w-[90px]">
                     <div className={`w-full ${bar.height} rounded-t-xl sm:rounded-t-2xl bg-[#3C6B1F] hover:bg-[#2d5217] transition-all shadow-md border border-emerald-400/30`} />
@@ -716,7 +734,7 @@ export default function Home() {
               <div className="grid grid-cols-12 gap-2 sm:gap-4 pt-3 text-center">
                 <div className="col-span-1" />
                 {[
-                  "Audits & M&V", "GIS & Survey", "Energy Model", "AI & Web3",
+                  "Audits & M&V", "GIS & Survey", "Energy Model", "AI & Data",
                 ].map((label) => (
                   <div key={label} className="col-span-2 font-bold text-[9px] sm:text-xs uppercase tracking-wider text-slate-200">
                     {label}
@@ -732,7 +750,8 @@ export default function Home() {
           EDUCATION, ACCREDITATIONS & CONTACT FOOTER 
       ===================================================================== */}
       <section className="bg-[#14230a] text-white py-12 sm:py-16 rounded-3xl my-2 sm:my-4 mx-2 sm:mx-8 shadow-sm border border-[#3C6B1F]/40">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="max-w-[90rem] mx-auto px-5 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8">
+          {/* COLUMN 1 */}
           <div className="space-y-4">
             <h3 className="font-black text-base sm:text-lg uppercase tracking-wider text-emerald-300 flex items-center gap-2">
               <MarkerCap size={24} className="rotate-2 sm:w-7 sm:h-7" /> Academic Background
@@ -754,6 +773,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* COLUMN 2 */}
           <div className="space-y-4">
             <h3 className="font-black text-base sm:text-lg uppercase tracking-wider text-emerald-300 flex items-center gap-2">
               <MarkerStar size={24} className="-rotate-2 sm:w-7 sm:h-7" /> Accreditations
@@ -776,6 +796,28 @@ export default function Home() {
             </ul>
           </div>
 
+          {/* COLUMN 3: NEW CERTIFICATIONS SECTION */}
+          <div className="space-y-4">
+            <h3 className="font-black text-base sm:text-lg uppercase tracking-wider text-emerald-300 flex items-center gap-2">
+              <MarkerCertificate size={24} className="rotate-2 sm:w-7 sm:h-7" /> Certifications
+            </h3>
+            <ul className="space-y-3 text-xs sm:text-sm">
+              <li>
+                <a href="https://www.credly.com/badges/1770fe73-f105-4bde-9c54-012b90f45224" target="_blank" rel="noopener noreferrer" className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Apache AI Orchestration</strong>
+                  <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Astronomer Certified</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.coursera.org/account/accomplishments/verify/0B6ASKTW9HS1" target="_blank" rel="noopener noreferrer" className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">IBM Certified AI Engineer</strong>
+                  <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Coursera Credential</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* COLUMN 4 */}
           <div className="space-y-4">
             <h3 className="font-black text-base sm:text-lg uppercase tracking-wider text-emerald-300 flex items-center gap-2">
               <MarkerMail size={24} className="-rotate-1 sm:w-7 sm:h-7" /> Contact
@@ -787,10 +829,13 @@ export default function Home() {
               <a href="mailto:motieno@kawikenya.com" className="block text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
                 motieno@kawikenya.com
               </a>
+              <a href="https://github.com/Okeyo-pixel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs sm:text-sm font-semibold hover:underline text-emerald-300 tracking-wide truncate">
+                <MarkerGithub size={16} /> github.com/Okeyo-pixel
+              </a>
               
               <button
                 onClick={openVerificationModal}
-                className="mt-2 w-full py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-emerald-400/30 shadow-md"
+                className="mt-4 w-full py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-emerald-400/30 shadow-md"
               >
                 <MarkerFolder size={16} className="-rotate-1 sm:w-5 sm:h-5" /> View Project Portfolio
               </button>
