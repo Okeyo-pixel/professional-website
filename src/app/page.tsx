@@ -327,13 +327,13 @@ export default function Home() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-slate-200">
-            <a href="#introduction" className="hover:text-emerald-400 transition-colors">Introduction</a>
-            <a href="#experience" className="hover:text-emerald-400 transition-colors">Work Experience</a>
+          <nav className="hidden lg:flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-200">
+            <a href="#introduction" className="hover:text-emerald-400 transition-colors">Intro</a>
+            <a href="#experience" className="hover:text-emerald-400 transition-colors">Experience</a>
             <a href="#responsibilities" className="hover:text-emerald-400 transition-colors">Responsibilities</a>
+            <a href="#services" className="hover:text-emerald-400 transition-colors">Services</a>
             <a href="#projects" className="hover:text-emerald-400 transition-colors">Projects</a>
-            <a href="#problem-solving" className="hover:text-emerald-400 transition-colors">Problem Solving</a>
-            <a href="#skills" className="hover:text-emerald-400 transition-colors">Technical Skills</a>
+            <a href="#skills" className="hover:text-emerald-400 transition-colors">Skills</a>
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -640,7 +640,65 @@ export default function Home() {
       </section>
 
       {/* =====================================================================
-          SLIDE 5: HIGHLIGHTED PROJECTS (NOW 3 COLUMNS)
+          SLIDE 4.5: PROFESSIONAL SERVICES
+      ===================================================================== */}
+      <section
+        id="services"
+        className="relative bg-slate-950 text-white py-14 sm:py-20 border-b-8 border-[#14230a] scroll-mt-20 overflow-hidden rounded-3xl my-2 sm:my-4 mx-2 sm:mx-8 shadow-sm"
+      >
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl pointer-events-none">
+          <video autoPlay loop muted playsInline preload="auto" className="w-full h-full object-cover scale-105 opacity-30 rounded-3xl">
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#14230a]/80 backdrop-blur-[2px] rounded-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-20">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-emerald-400 mb-2">
+              Consulting &amp; Freelance
+            </p>
+            <h2 className="font-black text-3xl sm:text-6xl uppercase tracking-tighter">
+              Professional <span className="text-emerald-300">Services</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: "Building Energy Auditing & M&V",
+                desc: "Delivering comprehensive ASHRAE Level II and EPRA Investment Grade Audits (IGA). I utilize DesignBuilder, EnergyPlus, and rigorous Measurement & Verification (M&V) protocols to identify high-ROI energy conservation measures and optimize thermal performance.",
+                Icon: MarkerCheckmark,
+              },
+              {
+                title: "Geospatial & Topographical Surveying",
+                desc: "Executing high-precision cadastral, topographical, and sectional surveys. I specialize in translating complex field data into actionable, multi-layered cartographic models and urban sprawl GIS mapping using ArcGIS and AutoCAD.",
+                Icon: MarkerFolder,
+              },
+              {
+                title: "AI Solutions & Data Automation",
+                desc: "Building scalable Python data pipelines, training Scikit-Learn Machine Learning models, and orchestrating Apache AI workflows. I develop custom automation scripts and evaluate LLM agents (RLHF) to modernize business operations.",
+                Icon: MarkerGithub,
+              },
+            ].map((service, idx) => (
+              <div key={idx} className="p-8 sm:p-10 rounded-3xl bg-[#1b2f0e]/80 border border-[#3C6B1F]/50 shadow-xl backdrop-blur-sm hover:bg-[#1b2f0e] transition-colors group">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#3C6B1F] text-white flex items-center justify-center mb-6 shadow-md border border-emerald-400/30 group-hover:scale-110 transition-transform duration-300">
+                  <service.Icon size={32} className="rotate-3" />
+                </div>
+                <h3 className="font-black text-lg sm:text-xl text-emerald-300 uppercase tracking-wide mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed tracking-wide">
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          SLIDE 5: HIGHLIGHTED PROJECTS
       ===================================================================== */}
       <section
         id="projects"
@@ -1012,6 +1070,7 @@ export default function Home() {
                 <MarkerGithub size={16} /> github.com/Okeyo-pixel
               </a>
               
+              {/* REPLACED BUTTON: Now triggers the Inquiry Modal */}
               <button
                 onClick={openInquiryModal}
                 className="mt-4 w-full py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-emerald-400/30 shadow-md"
