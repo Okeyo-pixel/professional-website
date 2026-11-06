@@ -100,7 +100,7 @@ export default function Home() {
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
   const [inquiryEmail, setInquiryEmail] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); // Track loading state
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const videos = document.querySelectorAll("video");
@@ -640,7 +640,7 @@ export default function Home() {
       </section>
 
       {/* =====================================================================
-          SLIDE 5: HIGHLIGHTED PROJECTS
+          SLIDE 5: HIGHLIGHTED PROJECTS (NOW 3 COLUMNS)
       ===================================================================== */}
       <section
         id="projects"
@@ -658,7 +658,7 @@ export default function Home() {
                   <br className="hidden sm:block" /> Projects
                 </h2>
                 <p className="text-[10px] sm:text-xs text-emerald-200 uppercase tracking-widest mt-2 sm:mt-4 font-semibold">
-                  Energy Audits • M&amp;V • Urban GIS
+                  Energy Audits • M&amp;V • AI Pipelines
                 </p>
               </div>
               <div className="flex-1 min-h-[200px] sm:min-h-[320px] bg-[#14230a] relative overflow-hidden">
@@ -670,7 +670,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
                 <div className="md:col-span-6 space-y-2 text-center sm:text-left">
                   <p className="text-sm sm:text-xl text-slate-200 font-light leading-relaxed tracking-wide">
-                    &ldquo;Building Energy Optimization &amp; Field Validation: Conducted rigorous investment-grade and ASHRAE Level II audits, utilizing heat transfer principles and psychrometric analysis to identify and model critical HVAC and baseload energy conservation measures (ECMs).&rdquo;
+                    &ldquo;Building Energy Optimization &amp; Data Workflows: Conducted rigorous investment-grade energy audits, and deployed scalable Machine Learning models to optimize spatial datasets and automate analytical engineering tasks.&rdquo;
                   </p>
                 </div>
 
@@ -681,16 +681,18 @@ export default function Home() {
                       <path d="M 20 95 A 80 80 0 0 1 55 32" fill="none" stroke="#3C6B1F" strokeWidth="26" strokeLinecap="round" />
                     </svg>
                     <span className="absolute bottom-1 font-black text-3xl sm:text-4xl tracking-tighter text-white">
-                      5+ Audits
+                      5+ Projects
                     </span>
                   </div>
                   <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-emerald-300 mt-1">
-                    ASHRAE Level II &amp; EPRA IGA Portfolio
+                    ASHRAE IGA &amp; ML Development
                   </span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* PROJECT CARDS: 3 COLUMNS */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mt-8">
+                {/* PROJECT 1 */}
                 <div className="space-y-3">
                   <div className="h-40 sm:h-52 rounded-2xl bg-slate-900 overflow-hidden shadow-md border border-[#3C6B1F]/30">
                     <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80" alt="Vasudev Heights & Con Edison M&V" className="w-full h-full object-cover rounded-2xl" />
@@ -704,6 +706,7 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* PROJECT 2 */}
                 <div className="space-y-3">
                   <div className="h-40 sm:h-52 rounded-2xl bg-slate-900 overflow-hidden shadow-md border border-[#3C6B1F]/30">
                     <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=700&q=80" alt="Juja Sub-County Urban Sprawl GIS" className="w-full h-full object-cover rounded-2xl" />
@@ -716,7 +719,28 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                {/* PROJECT 3: NEW ML PROJECT */}
+                <a href="https://github.com/Okeyo-pixel/Rainfall-Prediction-Classifier" target="_blank" rel="noopener noreferrer" className="space-y-3 group block cursor-pointer">
+                  <div className="h-40 sm:h-52 rounded-2xl bg-slate-900 overflow-hidden shadow-md border border-[#3C6B1F]/30 relative">
+                    <div className="absolute inset-0 bg-[#3C6B1F]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px]">
+                      <span className="bg-[#14230a] text-emerald-300 font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-xl border border-emerald-500/50 flex items-center gap-2 shadow-xl">
+                        <MarkerGithub size={16} /> View on GitHub
+                      </span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=700&q=80" alt="Rainfall Prediction ML Model" className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-800 text-emerald-300 font-black text-lg sm:text-xl flex items-center justify-center shrink-0 shadow-md z-10 border border-[#3C6B1F] group-hover:bg-[#3C6B1F] group-hover:text-white transition-colors">03</div>
+                    <div className="rounded-r-2xl bg-[#1b2f0e] text-white py-2 sm:py-3 px-4 sm:px-5 -ml-3 flex-1 shadow border border-l-0 border-[#3C6B1F]/40 group-hover:border-emerald-500/50 transition-colors">
+                      <p className="font-bold text-xs sm:text-sm uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Rainfall Classifier ML</p>
+                      <p className="text-[10px] sm:text-[11px] text-slate-300 font-light tracking-wide truncate">Scikit-Learn • Random Forest</p>
+                    </div>
+                  </div>
+                </a>
+
               </div>
+
             </div>
           </div>
         </div>
@@ -988,7 +1012,6 @@ export default function Home() {
                 <MarkerGithub size={16} /> github.com/Okeyo-pixel
               </a>
               
-              {/* REPLACED BUTTON: Now triggers the Inquiry Modal */}
               <button
                 onClick={openInquiryModal}
                 className="mt-4 w-full py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-emerald-400/30 shadow-md"
