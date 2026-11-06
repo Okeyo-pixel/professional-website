@@ -96,6 +96,12 @@ export default function Home() {
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [captchaError, setCaptchaError] = useState(false);
 
+  // Inquiry Form State
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
+  const [inquiryEmail, setInquiryEmail] = useState("");
+  const [inquiryMessage, setInquiryMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false); // Track loading state
+
   useEffect(() => {
     const videos = document.querySelectorAll("video");
     videos.forEach((v) => {
@@ -103,7 +109,7 @@ export default function Home() {
     });
   }, []);
 
-  // Handlers for Modal
+  // Handlers for Verification Modal
   const openVerificationModal = () => {
     setNum1(Math.floor(Math.random() * 10) + 1);
     setNum2(Math.floor(Math.random() * 10) + 1);
@@ -121,6 +127,55 @@ export default function Home() {
       window.location.href = "https://drive.google.com/drive/folders/19hzr56sl5uWyzMdoh3gCOGyoQ3ypmw-6";
     } else {
       setCaptchaError(true);
+    }
+  };
+
+  // Handlers for Inquiry Modal
+  const openInquiryModal = () => {
+    setIsInquiryModalOpen(true);
+  };
+
+  const closeInquiryModal = () => {
+    setIsInquiryModalOpen(false);
+    setInquiryEmail("");
+    setInquiryMessage("");
+    setIsSubmitting(false);
+  };
+
+  // Web3Forms Integration
+  const handleSendInquiry = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!inquiryEmail || !inquiryMessage) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "f74d5cfa-5838-4439-a658-55d68828668e",
+          email: inquiryEmail,
+          message: inquiryMessage,
+          subject: "New Inquiry from Portfolio Website",
+          from_name: "Portfolio Inquiry"
+        }),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        closeInquiryModal();
+      } else {
+        alert("Something went wrong. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+      setIsSubmitting(false);
     }
   };
 
@@ -182,6 +237,73 @@ export default function Home() {
                 Verify & Open
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* =====================================================================
+          INQUIRY CONTACT MODAL
+      ===================================================================== */}
+      {isInquiryModalOpen && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+          <div className="bg-[#14230a] border border-[#3C6B1F] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-slate-100">
+            <h3 className="font-black text-xl sm:text-2xl uppercase tracking-wider text-emerald-300 mb-4 flex items-center gap-3">
+              <MarkerMail size={24} /> Send Inquiry
+            </h3>
+            <p className="text-sm sm:text-base text-slate-300 font-light mb-6 tracking-wide">
+              Have a question or want to collaborate? Drop me a message below.
+            </p>
+            <form onSubmit={handleSendInquiry}>
+              <div className="mb-4">
+                <label className="block text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-2">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={inquiryEmail}
+                  onChange={(e) => setInquiryEmail(e.target.value)}
+                  className="w-full bg-[#1b2f0e] border border-[#3C6B1F] rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div className="mb-6">
+                <label className="block text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-2">
+                  Message
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  value={inquiryMessage}
+                  onChange={(e) => setInquiryMessage(e.target.value)}
+                  className="w-full bg-[#1b2f0e] border border-[#3C6B1F] rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 resize-none"
+                  placeholder="How can we work together?"
+                ></textarea>
+              </div>
+              <div className="flex gap-3 sm:gap-4">
+                <button
+                  type="button"
+                  onClick={closeInquiryModal}
+                  disabled={isSubmitting}
+                  className="flex-1 px-3 sm:px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest transition-colors disabled:opacity-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="flex-1 px-3 sm:px-5 py-3 rounded-xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest transition-colors border border-emerald-500/30 flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <MarkerMail size={14} className="hidden sm:block" /> Send Message
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
@@ -866,11 +988,12 @@ export default function Home() {
                 <MarkerGithub size={16} /> github.com/Okeyo-pixel
               </a>
               
+              {/* REPLACED BUTTON: Now triggers the Inquiry Modal */}
               <button
-                onClick={openVerificationModal}
+                onClick={openInquiryModal}
                 className="mt-4 w-full py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-[#3C6B1F] hover:bg-[#2d5217] text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-emerald-400/30 shadow-md"
               >
-                <MarkerFolder size={16} className="-rotate-1 sm:w-5 sm:h-5" /> View Project Portfolio
+                <MarkerMail size={16} className="-rotate-1 sm:w-5 sm:h-5" /> Send an Inquiry
               </button>
 
               <p className="text-[9px] sm:text-[11px] text-slate-300 font-light italic border-l-2 border-[#3C6B1F] pl-2 sm:pl-3 tracking-wide">
