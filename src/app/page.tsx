@@ -460,7 +460,7 @@ export default function Home() {
             </div>
 
             <p className="text-slate-200 text-sm sm:text-lg font-light leading-relaxed text-left sm:text-justify tracking-wide">
-              &ldquo;Innovative Energy, Geospatial &amp; AI Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools alongside Apache AI orchestration, RLHF model training, and machine learning to drive sustainable, automated engineering solutions.&rdquo;
+              &ldquo;Innovative Energy, Geospatial &amp; AI Engineer dedicated to optimizing building performance through comprehensive energy auditing and precise M&amp;V protocols. Adept at translating complex spatial and thermal datasets into actionable conservation strategies, utilizing advanced modeling tools, Building Management Systems (BMS), and Solar PV integration, alongside Apache AI orchestration and machine learning to drive sustainable, automated engineering solutions.&rdquo;
             </p>
 
             <div className="inline-block rounded-xl sm:rounded-2xl bg-slate-900 text-white px-5 sm:px-6 py-2 shadow border border-[#3C6B1F]">
@@ -667,7 +667,7 @@ export default function Home() {
             {[
               {
                 title: "Building Energy Auditing & M&V",
-                desc: "Delivering comprehensive ASHRAE Level II and EPRA Investment Grade Audits (IGA). I utilize DesignBuilder, EnergyPlus, and rigorous Measurement & Verification (M&V) protocols to identify high-ROI energy conservation measures and optimize thermal performance.",
+                desc: "Delivering comprehensive ASHRAE Level II and EPRA Investment Grade Audits (IGA). I utilize DesignBuilder, EnergyPlus, and rigorous Measurement & Verification (M&V) protocols to identify high-ROI energy conservation measures, integrating BMS and Solar PV solutions to optimize performance.",
                 Icon: MarkerCheckmark,
               },
               {
@@ -904,7 +904,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
               {[
-                { title: "Energy Simulation", desc: "Building energy modeling, HVAC systems analysis, and dynamic thermal simulation using DesignBuilder and EnergyPlus." },
+                { title: "Energy Simulation & Systems", desc: "Building energy modeling, HVAC & BMS systems analysis, Solar PV design, and dynamic thermal simulation using DesignBuilder and EnergyPlus." },
                 { title: "Auditing & M&V", desc: "ASHRAE Level II Energy Audits, EPRA Investment Grade Audits (IGA), and Con Edison NY M&V inspection protocols." },
                 { title: "Geospatial & CAD", desc: "Cadastral, topographical, and sectional surveys; spatial analysis and cartography using ArcGIS and AutoCAD." },
                 { title: "AI, ML & Orchestration", desc: "Python programming for Machine Learning (Scikit-Learn). Apache Airflow orchestration, AI Agents, and RLHF evaluation." },
@@ -1014,42 +1014,28 @@ export default function Home() {
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li>
-                <a href="https://www.credly.com/badges/1770fe73-f105-4bde-9c54-012b90f45224" target="_blank" rel="noopener noreferrer" className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                <a href="https://www.credly.com/badges/1770fe73-f105-4bde-9c54-012b90f45224" target="_blank" rel="noopener noreferrer" className="block p-2 sm:p-3 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
                   <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Apache AI Orchestration</strong>
                   <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Astronomer Certified</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.coursera.org/account/accomplishments/verify/0B6ASKTW9HS1" target="_blank" rel="noopener noreferrer" className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                <a href="https://www.coursera.org/account/accomplishments/verify/0B6ASKTW9HS1" target="_blank" rel="noopener noreferrer" className="block p-2 sm:p-3 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
                   <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">IBM Certified AI Engineer</strong>
                   <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Coursera Credential</span>
                 </a>
               </li>
               <li>
-                <div className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group cursor-default">
-                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Certified Energy Manager</strong>
-                  <span className="block mt-1">
-                    <span className="inline-block group-hover:hidden text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest transition-all duration-300">
-                      Professional Credential
-                    </span>
-                    <span className="hidden group-hover:inline-block text-[10px] sm:text-xs text-emerald-400 italic font-bold tracking-widest drop-shadow-md transition-all duration-300">
-                      Certificates available upon request
-                    </span>
-                  </span>
-                </div>
+                <a href="https://coursera.org/verify/FA7NLCDQ0UHA" target="_blank" rel="noopener noreferrer" className="block p-2 sm:p-3 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Solar Energy & Electrical Design</strong>
+                  <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">Univ. at Buffalo • Coursera</span>
+                </a>
               </li>
               <li>
-                <div className="block p-3 sm:p-4 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group cursor-default">
-                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">RLHF Specialist</strong>
-                  <span className="block mt-1">
-                    <span className="inline-block group-hover:hidden text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest transition-all duration-300">
-                      AI Model Training
-                    </span>
-                    <span className="hidden group-hover:inline-block text-[9px] sm:text-[10px] lg:text-[10.5px] text-emerald-400 italic font-bold tracking-widest drop-shadow-md transition-all duration-300 leading-tight">
-                      Evaluated & fine-tuned AI models via Outlier, Mecor, and Handshake AI
-                    </span>
-                  </span>
-                </div>
+                <a href="https://coursera.org/verify/HCRM7KB8P1ML" target="_blank" rel="noopener noreferrer" className="block p-2 sm:p-3 rounded-2xl bg-[#1b2f0e] border border-[#3C6B1F]/40 hover:bg-[#3C6B1F]/40 transition-colors group">
+                  <strong className="block text-white uppercase tracking-wide group-hover:text-emerald-300 transition-colors">Building Management System</strong>
+                  <span className="text-[10px] sm:text-xs text-emerald-300 font-semibold uppercase tracking-widest block mt-1">L&amp;T EduTech • Coursera</span>
+                </a>
               </li>
             </ul>
           </div>
